@@ -46,3 +46,13 @@ class SpiderManView(TemplateView):
             'body': 'My name is Peter Parker',
             'image': '/static/images/spiderman.jpg'
         }
+    
+class ScarletWitchView(TemplateView):
+    template_name = 'hero.html'
+
+    def get_context_data(self, **kwargs):
+        return {
+            'title': 'Scarlet Witch',
+            'body': 'My name is Wanda Maximoff',
+            'image': '/static/images/wanda.jpg'
+        }    
