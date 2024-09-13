@@ -1,1 +1,38 @@
-<h1>HERO</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="row align-items-start">
+        <div class="col">
+            <h1>{{ title }}</h1>
+            <p>{{ id }}</p>
+        </div>
+        <div class="col">
+            <h2>Powers:</h2>
+            <ul>
+                <li>{{power1}}</li>
+                <li>{{power2}}</li>
+                <li>{{power3}}</li>
+            </ul>
+            <h2>Weaknesses:</h2>
+            <ul>
+                <li>{{weakness1}}</li>
+                <li>{{weakness2}}</li>
+                <li>{{weakness3}}</li>
+            </ul>
+        </div>
+    <div class="col">
+        <img src="{{ image }}" alt="{{ image }}" width="300">
+    </div>
+    </div>
+</div>
+
+</body>
+
+</html>
