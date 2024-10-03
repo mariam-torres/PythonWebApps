@@ -1,0 +1,29 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <div class="row align-items-start">
+        <div class="col">
+            <h1>{{ title }}</h1>
+            <p>{{ id }}</p>
+        </div>
+        <div class="col">
+            <h2>Strengths</h2>
+            <ul>
+                <li>{{strength1}}</li>
+                <li>{{strength2}}</li>
+                <li>{{strength3}}</li>
+            </ul>
+            <h2>Weaknesses</h2>
+            <ul>
+                <li>{{weakness1}}</li>
+                <li>{{weakness2}}</li>
+                <li>{{weakness3}}</li>
+            </ul>
+        </div>
+    <div class="col">
+        <img src="{{ photo }}" alt="{{ photo }}" width="300">
+    </div>
+    </div>
+</div>
+{% endblock content %}

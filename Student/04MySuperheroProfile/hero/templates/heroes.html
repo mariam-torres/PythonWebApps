@@ -1,0 +1,16 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="d-flex flex-row flex-wrap justify-content-center">
+    {% for hero in heroes %}
+        <div class="m-3">
+            <a href="/hero/{{ hero.numID }}">
+                <img class="photo" src="{{ hero.imagePath }}" alt="Hero {{ hero.title }}" width="300">
+            </a>
+            <h3 class="text-center">{{ hero.title }}</h3>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

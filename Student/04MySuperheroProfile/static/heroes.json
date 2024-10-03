@@ -1,0 +1,62 @@
+{
+    "0": {
+        "name": "spiderman",
+        "title": "Spiderman",
+        "id": "Peter Parker",
+        "strength1": "Web Powers",
+        "strength2": "Spidey Senses",
+        "strength3": "Strength",
+        "weakness1": "His Naivete",
+        "weakness2": "Idealism and love for others",
+        "weakness3": "Ethyl Chloride Pesticide",
+        "imagePath": "/static/images/spiderman.jpg"
+    },
+
+    "1": {
+        "title": "Storm",
+        "id": "Ororo Munroe",
+        "strength1":"Weather Control",
+        "strength2": "Solar Wind Manipulation",
+        "strength3": "Strength",
+        "weakness1": "Claustrophobia",
+        "weakness2": "Cannot create unnatural atmospheric conditions",
+        "weakness3": "Emotions and willpower",
+        "imagePath": "/static/images/storm.jpg"
+    },
+
+    "2": {
+        "title": "Scarlet Witch",
+        "id": "Wanda Maximoff",
+        "strength1": "Telekinesis",
+        "strength2": "Energy Manipulation",
+        "strength3": "Chaos Magic",
+        "weakness1": "Mental Stability",
+        "weakness2": "Physical Condition",
+        "weakness3": "Perception Range",
+        "imagePath": "/static/images/wanda.jpg"
+    },
+
+    "3": {
+        "title": "X-23",
+        "id": "Laura Kinney",
+        "strength1": "Regenerative healing",
+        "strength2": "Adamantium Claws",
+        "strength3": "Superhuman strength, durability, stamina",
+        "weakness1": "Trigger Scent",
+        "weakness2": "Heal Block",
+        "weakness3": "Critical Resistance",
+        "imagePath": "/static/images/x23.jpg"
+    },
+
+    "4": {
+        "title": "Phoenix",
+        "id": "Jean Grey-Summers",
+        "strength1": "Telepathy",
+        "strength2": "Telekinesis",
+        "strength3": "Phoenix Force",
+        "weakness1": "Power Instability",
+        "weakness2": "Emotional Vulnerability",
+        "weakness3": "Psychic Attacks",
+        "imagePath": "/static/images/phoenix.jpg"
+    }
+}
