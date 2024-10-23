@@ -1,23 +1,21 @@
-.photo {
+.hero-container {
     width: 300px;
     height: 300px;
-    object-fit: cover; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
-.photo:hover {
-    transform: scale(1.05);
+.hero-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
 }
 
-.heroes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; 
-    padding: 20px;
+.hero-image:hover {
+    transform: scale(1.1);
 }
-
 .hero-item {
     text-align: center;
 }
