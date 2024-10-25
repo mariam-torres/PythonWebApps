@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'SuperProfiles',
+    'hero',
     # Styling
     "crispy_forms",
     "crispy_bootstrap5",
