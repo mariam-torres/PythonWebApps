@@ -1,0 +1,43 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+envs:
+- key: DISABLE_COLLECTSTATIC
+  scope: RUN_AND_BUILD_TIME
+  value: "1"
+features:
+- buildpack-stack=ubuntu-22
+ingress:
+  rules:
+  - component:
+      name: pythonwebapps-student-07-superhe
+    match:
+      path:
+        prefix: /
+  - component:
+      name: pythonwebapps-student-07-superh2
+    match:
+      path:
+        prefix: /static
+name: oyster-app
+region: nyc
+services:
+- environment_slug: python
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: mariam-torres/PythonWebApps
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-1gb
+  name: pythonwebapps-student-07-superhe
+  run_command: gunicorn --worker-tmp-dir /dev/shm config.wsgi
+  source_dir: Student/07/Superhero
+static_sites:
+- environment_slug: html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: mariam-torres/PythonWebApps
+  name: pythonwebapps-student-07-superh2
+  source_dir: Student/07/Superhero/static
