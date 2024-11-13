@@ -10,16 +10,16 @@ features:
 ingress:
   rules:
   - component:
-      name: pythonwebapps-student-07-superhe
+      name: pythonwebapps-student-09-superhe
     match:
       path:
         prefix: /
   - component:
-      name: pythonwebapps-student-07-superh2
+      name: pythonwebapps-student-09-superh2
     match:
       path:
         prefix: /static
-name: oyster-app
+name: seal-app
 region: nyc
 services:
 - environment_slug: python
@@ -29,15 +29,15 @@ services:
     repo: mariam-torres/PythonWebApps
   http_port: 8080
   instance_count: 1
-  instance_size_slug: apps-s-1vcpu-1gb
-  name: pythonwebapps-student-07-superhe
+  instance_size_slug: apps-s-1vcpu-0.5gb
+  name: pythonwebapps-student-09-superhe
   run_command: gunicorn --worker-tmp-dir /dev/shm config.wsgi
-  source_dir: Student/07/Superhero
+  source_dir: Student/09/Superhero
 static_sites:
 - environment_slug: html
   github:
     branch: main
     deploy_on_push: true
     repo: mariam-torres/PythonWebApps
-  name: pythonwebapps-student-07-superh2
-  source_dir: Student/07/Superhero/static
+  name: pythonwebapps-student-09-superh2
+  source_dir: Student/09/Superhero/static
