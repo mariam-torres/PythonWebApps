@@ -64,8 +64,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": environ.get("DATABASE_ENGINE"),
-        "NAME": environ.get("DATABASE_NAME"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

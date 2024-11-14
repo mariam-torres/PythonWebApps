@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class Reporter(models.Model):
 
@@ -27,6 +29,11 @@ class Reporter(models.Model):
     @staticmethod
     def get_me(user):
         return Reporter.objects.get_or_create(user=user)[0]
+    
+    @receiver(post_save, sender=User)
+    def create_reporter_for_new_user(sender, instance, created, **kwargs):
+        if created:
+            Reporter.objects.get_or_create(user=instance)
 
 class Hero(models.Model):
 
