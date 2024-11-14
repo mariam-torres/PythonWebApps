@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.urls import reverse_lazy
+from django.urls import reverse
 
 class Reporter(models.Model):
 
@@ -14,7 +14,7 @@ class Reporter(models.Model):
         return f'{self.user.username}'
 
     def get_absolute_url(self):
-        return reverse_lazy('reporter_detail', args=[str(self.id)])
+        return reverse('reporter_detail', args=[Reporter.pk])
 
     @property
     def name(self):
