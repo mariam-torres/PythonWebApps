@@ -26,7 +26,7 @@ class ReporterHomeView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         if self.request.user.is_anonymous:
             return '/hero/'
-        return f'/reporter/{get_reporter(self.request.user).pk}'
+        return f'/reporter/{Reporter.get_me(self.request.user).pk}'
     
 class ReporterListView(ListView):
     template_name = 'reporter/list.html'
