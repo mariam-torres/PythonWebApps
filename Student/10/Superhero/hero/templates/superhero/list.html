@@ -1,43 +1,17 @@
 {% extends 'theme.html' %}
 
-{% block title %}Hero Gallery{% endblock %}
-
 {% block content %}
-<style>
-    .hero-container {
-        width: 300px;
-        height: 300px;
-        overflow: hidden;
-        border-radius: 8px;
-        margin: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-        display: block;
-    }
-
-    .hero-image:hover {
-        transform: scale(1.1);
-    }
-</style>
-
-<div class="d-flex justify-content-center flex-wrap">
-    {% for hero in object_list %}
-    <div class="hero-container">
-        <a href="/hero/{{ hero.pk }}">
-            <img class="hero-image" src="{{ hero.imagePath }}" alt="{{ hero.title }}">
-        </a>
-    </div>
-    {% endfor %}
-</div>
 
 <div class="d-flex justify-content-center">
-    <a href="/hero/add" class="btn btn-success m-5">Add New Hero</a>
+
+{% for hero in object_list %}
+
+<a href="/hero/{{ hero.pk }}">
+    <img class="photo" src="{{ hero.imagePath }}" alt="{{ hero.title }}" width="300">
+</a>
+
+{% endfor %}
+
 </div>
 
 {% endblock content %}

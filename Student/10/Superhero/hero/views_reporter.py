@@ -7,10 +7,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView, RedirectView
 
-from .models import Hero, Reporter
+from .models import Hero, Reporter, Article
     
+
 def list_heroes(reporter):
     return dict(heroes=Hero.objects.filter(reporter=reporter))
+
+
+def list_articles(reporter):
+    return dict(articles=Article.objects.filter(reporter=reporter))
 
 
 def get_reporter(user):
@@ -26,7 +31,7 @@ class ReporterHomeView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         if self.request.user.is_anonymous:
             return '/hero/'
-        return f'/reporter/{Reporter.get_me(self.request.user).pk}'
+        return f'/reporter/{get_reporter(self.request.user).pk}'
     
 class ReporterListView(ListView):
     template_name = 'reporter/list.html'
@@ -44,6 +49,7 @@ class ReporterDetailView(DetailView):
     def get_context_data(self, **kwargs):
         kwargs = super().get_context_data(**kwargs)
         kwargs.update(list_heroes(kwargs.get('object')))
+        kwargs.update(list_articles(kwargs.get('object')))
         return kwargs
 
 

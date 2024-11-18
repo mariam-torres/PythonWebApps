@@ -71,6 +71,36 @@
         </p>
 
     </div>
+
+    <div class="card m-5 p-5">
+
+        <h2 class="text-primary">List of Articles</h2>
+
+        <table class="table table-hover">
+            <tr>
+                <th>Article</th>
+                <th>Reporter</th>
+                <th>Edit</th>
+            </tr>
+
+            {% for article in articles %}
+            <tr>
+                <td><a href="/article/{{ article.pk }}">{{ article.title }}</a></td>
+                <td><a href="/reporter/{{ article.reporter.pk }}">{{ article.reporter.user.username }}</a></td>
+                <td>
+                    <a href="/article/{{ article.pk }}/">Edit</a> /
+                    <a href="/article/{{ article.pk }}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <p>
+            <a href="/article/add" class="btn btn-success m-5">Add New Article</a>
+        </p>
+
+    </div>
 </div>
 
 {% endblock content %}
